@@ -88,6 +88,8 @@ int main()
             {
                 //(void)printf("\r\nRegistration Id:\r\n%s\r\n", reg_info.registration_id);
                 //(void)printf("\r\nEndorsement Key:\r\n%s\r\n", STRING_c_str(encoded_ek));
+                (void)printf("%s\r\n", reg_info.registration_id);
+                (void)printf("%s\r\n", STRING_c_str(encoded_ek));
                 STRING_delete(encoded_ek);
                 result = 0;
             }
