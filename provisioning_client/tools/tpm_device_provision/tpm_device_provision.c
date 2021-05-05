@@ -18,10 +18,10 @@
 typedef struct REGISTRATION_INFO_TAG
 {
     BUFFER_HANDLE endorsement_key;
-    char* registration_id;
+    char *registration_id;
 } REGISTRATION_INFO;
 
-static int gather_registration_info(REGISTRATION_INFO* reg_info)
+static int gather_registration_info(REGISTRATION_INFO *reg_info)
 {
     int result;
 
@@ -59,7 +59,7 @@ int main()
     REGISTRATION_INFO reg_info;
     memset(&reg_info, 0, sizeof(reg_info));
 
-    (void)printf("Gathering the registration information...\r\n");
+    //(void)printf("Gathering the registration information...\r\n");
     if (platform_init() != 0)
     {
         (void)printf("Failed calling platform_init\r\n");
@@ -86,8 +86,8 @@ int main()
             }
             else
             {
-                (void)printf("\r\nRegistration Id:\r\n%s\r\n", reg_info.registration_id);
-                (void)printf("\r\nEndorsement Key:\r\n%s\r\n", STRING_c_str(encoded_ek));
+                //(void)printf("\r\nRegistration Id:\r\n%s\r\n", reg_info.registration_id);
+                //(void)printf("\r\nEndorsement Key:\r\n%s\r\n", STRING_c_str(encoded_ek));
                 STRING_delete(encoded_ek);
                 result = 0;
             }
@@ -98,7 +98,7 @@ int main()
         platform_deinit();
     }
 
-    (void)printf("\r\nPress any key to continue:\r\n");
-    (void)getchar();
+    //(void)printf("\r\nPress any key to continue:\r\n");
+    //(void)getchar();
     return result;
 }
